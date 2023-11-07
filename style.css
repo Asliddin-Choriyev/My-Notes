@@ -6,7 +6,6 @@
 
 body {
   overflow-x: hidden;
-
   background-color: rgba(0, 0, 0, 0.689);
 }
 
@@ -34,6 +33,12 @@ body {
   color: white;
 }
 
+.developer {
+  text-align: center;
+  opacity: 0.5;
+  margin-top: 100px;
+  color: wheat;
+}
 .list-item {
   display: flex;
   align-items: center;
