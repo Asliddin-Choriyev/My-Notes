@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 let data = [];
 let id = 0;
 
@@ -9,8 +7,18 @@ let id = 0;
 const list = document?.querySelector(".list");
 const form = document?.querySelector(".form");
 let listItme;
-const today=document.querySelector(".title>span")
-today.textContent=`${new Date().getMonth()+1}.${new Date().getDate()}.${new Date().getFullYear()}`
+const today = document.querySelector(".title>span");
+today.textContent = `${
+  new Date().getMonth() + 1 < 10
+    ? "0" + new Date().getMonth() + 1
+    : new Date().getMonth() + 1
+}.${
+  new Date().getDate() < 10 ? "0" + new Date().getDate() : new Date().getDate()
+}.${
+  new Date().getFullYear() < 10
+    ? "0" + new Date().getFullYear
+    : new Date().getFullYear()
+}`;
 // buttons
 const plusBtn = document?.querySelector(".plus-btn");
 const createBtn = document?.querySelector(".button");
@@ -49,13 +57,13 @@ createBtn?.addEventListener("click", (e) => {
   e?.preventDefault();
   if (id === 0) {
     const date = new Date();
-    const hour = date.getHours();
+    const hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
     const listObj = {
       id: date.getTime(),
       isChecked: false,
       listName: input?.value,
-      createdAt: `${Math.abs(hour - 12)}.${
-        date.getMinutes() <= 10 ? 0 + date.getMinutes() : date.getMinutes()
+      createdAt: `${hour}:${
+        date.getMinutes() <= 10 ? "0" + date.getMinutes() : date.getMinutes()
       } ${hour <= 12 ? "AM" : "PM"}`,
     };
     data.push(listObj);
