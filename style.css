@@ -8,7 +8,9 @@ body {
   overflow-x: hidden;
   background-color: rgba(0, 0, 0, 0.689);
 }
-
+.main-title > h1 {
+  margin-left: -170px;
+}
 .todo-container {
   border-radius: 15px 30px;
   background: darkorange;
