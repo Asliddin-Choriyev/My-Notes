@@ -89,7 +89,6 @@ createBtn?.addEventListener("click", (e) => {
 });
 
 list.addEventListener("click", (e) => {
-  console.log("salom");
   const target = e.target.classList[0];
   const dataset = +e.target.parentElement.dataset.set;
   if (target === "check") {
